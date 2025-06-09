@@ -1,0 +1,37 @@
+# Python files
+*.py
+requirements.txt
+alembic.ini
+alembic/
+scripts/
+backend/
+api/
+flows/
+pipelines/
+data/
+shared/
+supabase/
+tests/
+notebooks/
+.venv/
+__pycache__/
+
+# Other unnecessary files for deployment
+*.md
+*.sql
+*.csv
+*.json
+!package.json
+!package-lock.json
+!vercel.json
+!tsconfig.json
+!components.json
+!vite.config.ts
+!tailwind.config.ts
+!postcss.config.js
+!eslint.config.js
+
+# Keep only essential frontend files
+!src/
+!public/
+!index.html
