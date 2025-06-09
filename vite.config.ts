@@ -19,4 +19,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    },
+    modulePreload: false,
+    target: 'esnext',
+    minify: 'terser',
+    sourcemap: false
+  }
 }));

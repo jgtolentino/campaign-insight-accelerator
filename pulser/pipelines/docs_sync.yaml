@@ -1,0 +1,21 @@
+version: 2.2.2
+name: sync-google-docs-to-git
+schedule: "0 2 * * *"           # every night 02:00
+resources:
+  python_version: "3.11"
+steps:
+  - id: fetch
+    uses: python:3.11
+    run: |
+      python shared/drive_sync/drive_to_md.py \
+         --folder "$DRIVE_DOC_ROOT" \
+         --out docs/ \
+         --checkpoint .pulser/docs.ckpt.json
+  - id: commit
+    uses: gh:actions/checkout@v4
+  - id: push-pr
+    uses: gh:actions/create-pull-request@v5
+    with:
+      branch: docs/sync-${{ steps.fetch.outputs.commit_hash }}
+      title: "docs: nightly sync from Google Docs"
+      body: "Automated update of product docs from Drive." 

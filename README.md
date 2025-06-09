@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+# CES Pipeline Monitor
 
-## Project info
+A real-time monitoring dashboard for the CES (Campaign Effectiveness Score) pipeline, built with React, TypeScript, and Supabase.
 
-**URL**: https://lovable.dev/projects/75464ab8-07d5-4913-a5f6-67bfbea4ac81
+## Features
 
-## How can I edit this code?
+- Real-time monitoring of CES pipeline sensors
+- Performance metrics visualization (accuracy, latency, throughput)
+- Model status tracking
+- One-click model retraining
+- Historical metrics analysis
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- Frontend:
+  - React 18
+  - TypeScript
+  - Tailwind CSS
+  - Recharts for data visualization
+  - React Query for data fetching
+  - React Router for navigation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/75464ab8-07d5-4913-a5f6-67bfbea4ac81) and start prompting.
+- Backend:
+  - Supabase for database and authentication
+  - Edge Functions for serverless operations
+  - PostgreSQL for data storage
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-org/ces-monitor.git
+   cd ces-monitor
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Set up environment variables:
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-Follow these steps:
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Database Schema
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The application uses the following tables:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- `sensors`: Tracks the status of individual pipeline sensors
+- `metric_history`: Stores historical performance metrics
+- `model_status`: Current state of the CES model
+- `retraining_jobs`: Manages model retraining operations
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Development
 
-**Edit a file directly in GitHub**
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run lint`: Run ESLint
+- `npm run test`: Run tests
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deployment
 
-**Use GitHub Codespaces**
+1. Build the application:
+   ```bash
+   npm run build
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2. Deploy to your hosting platform of choice (e.g., Vercel, Netlify)
 
-## What technologies are used for this project?
+3. Set up Supabase:
+   - Create a new Supabase project
+   - Run the migrations in `supabase/migrations`
+   - Deploy the Edge Functions in `supabase/functions`
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/75464ab8-07d5-4913-a5f6-67bfbea4ac81) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT

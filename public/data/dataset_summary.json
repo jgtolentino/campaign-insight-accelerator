@@ -1,0 +1,38 @@
+{
+  "generation_timestamp": "2025-06-08T23:23:33.563615",
+  "total_campaigns": 500,
+  "total_metrics": 46701,
+  "total_assets": 4427,
+  "total_sensors": 900,
+  "total_models": 150,
+  "date_range": {
+    "start": "2022-06-10T23:23:32.214633",
+    "end": "2025-09-30T23:23:32.212028"
+  },
+  "tenants": [
+    "tbwa",
+    "ces",
+    "scout"
+  ],
+  "brands": [
+    "CocaCola",
+    "Nike",
+    "Apple",
+    "Samsung",
+    "Toyota",
+    "Unilever",
+    "P&G",
+    "McDonald's",
+    "Adidas",
+    "BMW"
+  ],
+  "industries": [
+    "FMCG",
+    "Automotive",
+    "Tech",
+    "Healthcare",
+    "Fashion",
+    "Finance",
+    "Food & Beverage"
+  ]
+}
